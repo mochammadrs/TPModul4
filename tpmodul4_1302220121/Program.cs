@@ -1,4 +1,4 @@
-﻿public class KodePos
+﻿/*public class KodePos
 {
     public enum Kelurahan
     {
@@ -47,4 +47,49 @@
         Kelurahan lurah11 = Kelurahan.Samoja;
         Console.WriteLine("Kelurahan " + lurah11.ToString() + " dengan Kode pos " + GetKodePos(lurah11));
     }
+} */
+
+public class DoorMachine
+{
+    public enum DoorState
+    {
+        Terkunci,
+        Terbuka
+    }
+
+    private DoorState currentState; 
+
+    public DoorMachine()
+    {
+        currentState = DoorState.Terkunci;
+        Console.WriteLine("Pintu terkunci");
+    }
+
+    public void Terkunci()
+    {
+        if (currentState != DoorState.Terkunci)
+        {
+            currentState = DoorState.Terkunci;
+            Console.WriteLine("Pintu terkunci");
+        }
+    }
+
+    public void Terbuka()
+    {
+        if (currentState != DoorState.Terbuka)
+        {
+            currentState = DoorState.Terbuka;
+            Console.WriteLine("Pintu tidak terkunci");
+        }
+    }
+    static void Main(string[] args)
+    {
+        DoorMachine doorMachine = new DoorMachine();
+
+        doorMachine.Terbuka();
+        doorMachine.Terkunci();
+    }
 }
+
+
+
